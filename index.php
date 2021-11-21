@@ -5,7 +5,6 @@ $db = $con->query($create);
 if($db){}
 $domain = $_SERVER['REQUEST_URI'].'url.php';
 $input_url=$_POST["url"]  ?? null;
-echo "klk " . $input_url;
 $img=$_POST["img"] ?? null;
 $tipo=$_POST["red"] ?? 'false';
 $title=  $_POST["title"] ?? null;
@@ -75,8 +74,8 @@ if(!isset($input_url)) {
     echo json_encode(array("short" => "envie url para empezar"));
     die();
 }
-if (!file_exists($input_url.'.html')) die("El usuario no esta descrito");
-$html = @file_get_contents($input_url.'.html');
+//if (!file_exists($input_url.'.html')) die("El usuario no esta descrito");
+//$html = @file_get_contents($input_url.'.html');
 
 $sql = 'INSERT INTO "short_urls" ("id", "long_url", "short_urls", "img", "title", "description", "tipo") VALUES ("'.$short_url.'","'.$input_url.'","'.$short_url.'", "'.$img.'","'.$title.'","'.$description.'","'.$tipo.'")';
 $run = $con->query($sql);
