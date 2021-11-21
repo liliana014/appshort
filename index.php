@@ -5,6 +5,7 @@ $db = $con->query($create);
 if($db){}
 $domain = $_SERVER['REQUEST_URI'].'url.php';
 $input_url=$_POST["url"]  ?? null;
+echo "klk " . $input_url;
 $img=$_POST["img"] ?? null;
 $tipo=$_POST["red"] ?? 'false';
 $title=  $_POST["title"] ?? null;
